@@ -1,0 +1,57 @@
+.TaskContainer{
+    display: flex;
+
+}
+.Task{
+    display: flex;
+    flex-direction: column;
+    margin: 5px ;
+    padding: 5px 8px;
+    width: 20rem;
+    box-sizing: border-box;
+    box-shadow: 2px 3px 5px #777;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 1.3rem;
+    font-family: monospace;
+    color: white;
+   
+   
+}
+.TaskData{
+    margin-top:3px ;
+    margin-bottom: 3px;
+}
+.BtnSuccess button{
+    color: white;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    /* border-bottom: 1px solid white; */
+   /*  background-color: white; */
+    padding: 3px;
+    box-sizing: border-box;
+    /*  box-shadow: 1px 2px 3px #777;  */
+}
+.BtnSuccess button:hover{
+    border-bottom: 1px solid white;
+    font-size: 1.1rem;
+}
+.BtnSuccess{
+    display: flex;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+} 
+.BlueBg{
+    background-color: #1a6ff9;
+
+}
+.PinkBg{
+    background-color: #E54C85;
+}
+.NavyBlueBg{
+    background-color:#2b5b84 ;
+}
+.LightBlueBg{
+    background-color: #1DAFDE;
+}

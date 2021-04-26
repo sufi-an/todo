@@ -1,0 +1,13 @@
+.BtnSuccess button{
+    
+    color: green;
+    font-size: 1.3rem;
+}
+.BtnSuccess{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.BtnPrimary button{
+    color: rgb(22, 162, 243);
+    font-size: 1.3rem;
+}

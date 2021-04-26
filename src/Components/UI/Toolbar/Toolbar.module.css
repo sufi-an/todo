@@ -1,0 +1,46 @@
+.Toolbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 56px;
+    background-color: rgb(202, 20, 202);
+    box-sizing: border-box;
+    box-shadow: 3px 4px 7px rgb(145, 143, 143);
+}
+.HomeContainer{
+    width: 80%;
+    justify-content: left;
+}
+.BtnHome{
+   align-content: center;
+}
+.BtnHome a{
+    text-decoration: none;
+}
+.BtnHome button{
+    font-size: 1.3rem;
+    align-self: center;
+    border: 2px solid transparent;
+    color: white;
+}
+.BtnSuccess button{    
+    color: white;
+    font-size: 1.3rem;
+    border: 2px solid transparent;
+}
+
+.BtnDisable button{
+    color: #cbce91ff;
+    font-size: 1.3rem;
+    border: 2px solid transparent;
+}
+
+.BtnSuccess button:hover{
+    border: 2px solid white;
+}
+.BtnDisable button:hover{
+    border: 2px solid #cbce91ff;
+}
+.BtnHome button:hover{
+    border: 2px solid white;
+}

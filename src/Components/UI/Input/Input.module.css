@@ -1,0 +1,33 @@
+.Input{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    
+}
+.Input input{
+    border: none;
+    border-bottom:1.5px solid black ;
+    outline: none;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+.Input label{
+
+}
+.Input input:focus-visible{
+    border-bottom:1.5px solid rgb(196, 131, 12) ;
+}
+
+.BtnSuccess button{
+    
+    color: green;
+    font-size: 1.3rem;
+}
+.BtnSuccess{
+    text-align: center;
+    padding-bottom: 10px;
+}
