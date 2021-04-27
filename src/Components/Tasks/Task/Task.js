@@ -3,16 +3,27 @@ import Button from '../../UI/Button/Button';
 import classes from './Task.module.css';
 class Task extends Component{
   state={
-    time: this.props.data.issueTime
+    time: ""
+  }
+  getData(data){
+    let time=new Date();
+    time=(time.getHours()<10?"0"+time.getHours():time.getHours())
+      +":"+(time.getMinutes()<10?"0"+time.getMinutes():time.getMinutes())
+      +":"+(time.getSeconds()<10?"0"+time.getSeconds():time.getSeconds());
+    //console.log(time)
+    return time;
   }
   componentDidMount() {
-    this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
+    
+    let time=new Date();
+    time=time.getMinutes();
+    this.interval = setInterval(()=>Date.now()>0? this.setState({time:this.getData(Date.now())}):null,1000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+  
   render(){ 
-  console.log(this.props)
   let btnType=null;
   if(this.props.data.id%5 === 0){
     btnType='BlueBg';
