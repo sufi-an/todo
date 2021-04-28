@@ -35,13 +35,16 @@ class Layout extends Component{
     getTime(){
         let today=new Date();
         let time=today.getHours();
-        if(time>12){
+        //console.log()
+       /*  if(time>12){
             time=time-12;
             time=time+":"+(today.getMinutes())+" PM";
         }
         else{
             time=time+":"+(today.getMinutes())+" AM";
-        }
+        } */
+        time=time+":"+today.getMinutes();
+        console.log(time)
         return time;
     }
     getDate(){
