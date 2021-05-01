@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Auxi from '../../hoc/auxi';
-import Button from '../UI/Button/Button'
+
 import Modal from '../UI/Modal/Modal';
 import Input from '../UI/Input/Input';
 
-import classes from './Layout.module.css'
-import Tasks from '../Tasks/Tasks';
+
 import Toolbar from '../UI/Toolbar/Toolbar';
 
 class Layout extends Component{
@@ -35,13 +34,16 @@ class Layout extends Component{
     getTime(){
         let today=new Date();
         let time=today.getHours();
-        if(time>12){
+        ////console.log()
+       /*  if(time>12){
             time=time-12;
             time=time+":"+(today.getMinutes())+" PM";
         }
         else{
             time=time+":"+(today.getMinutes())+" AM";
-        }
+        } */
+        time=time+":"+today.getMinutes();
+        ////console.log(time)
         return time;
     }
     getDate(){
@@ -50,7 +52,7 @@ class Layout extends Component{
         return date;
     }
     getRemainingTime(time){
-        console.log(time)
+        //console.log(time)
     }
     onAddTaskHandler=(date,task)=>{
         this.modalClosed();
@@ -79,20 +81,39 @@ class Layout extends Component{
     }
     onTaskDoneHandler=(id)=>{
         let today=new Date();
+        let removedElement=null;
         const removedData=this.state.taskList.map((element)=>{
             if(element.id === id){
                 element.deadline=today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                removedElement=element;
                 return element;
             }
         })
+        if(removedElement === null){
+            return;
+        }
         const removedList=this.state.completedTaskList;
-        removedList.push(removedData);
+        let instance={
+            'id':'',
+            task:'',
+            issueDate:'',
+            issueTime:'',
+            deadline:''
+        }
+        ////console.log(removedElement)
+        instance.deadline=removedElement.deadline;
+        instance.id=removedElement.id;
+        instance.issueDate=removedElement.issueDate;
+        instance.task=removedElement.task;
+        removedList.push(instance);
         this.setState({completedTaskList:removedList});
         const updatedData=this.state.taskList.filter((item)=> item.id!== id);
         this.setState({taskList:updatedData});
+        //console.log(this.state.completedTaskList);
+        //console.log(updatedData)
     }
     onHistoryCheck=()=>{
-        console.log(this.state.completedTaskList);
+        //console.log(this.state.completedTaskList);
     }
     render(){ 
     return (

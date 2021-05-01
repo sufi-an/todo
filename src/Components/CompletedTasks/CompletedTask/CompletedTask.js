@@ -1,7 +1,9 @@
 import React from 'react';
 import classes from '../../Tasks/Task/Task.module.css'
 const completedTask=(props)=>{
-    const task=props.data[0];
+
+    const task=props.data;
+    //console.log(task)
     let btnType=null;
   if(props.data.id%5 === 0){
     btnType='BlueBg';

@@ -33,7 +33,7 @@ const toolbar=(props)=>{
             </Fragment>
             <Switch>
          
-            <Route exact path="/"  render={()=><Tasks tasksList={props.tasksList}  clicked={props.clicked} />}/>
+            <Route exact path="/"  render={()=><Tasks addTask={props.addTask} tasksList={props.tasksList}  clicked={props.clicked} />}/>
             <Route  path="/history" render={()=><CompletedTasks list={props.completedTaskList}/>}/>
         </Switch>
         </BrowserRouter>
